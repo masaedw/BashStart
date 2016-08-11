@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
+﻿using System.IO;
+using System.Threading;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 
 namespace BashStartApi
 {
     public class Program
     {
         public static void Main(string[] args)
+        {
+            var tokenSource = new CancellationTokenSource();
+
+            Run(tokenSource.Token);
+        }
+
+        public static void Run(CancellationToken token)
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
@@ -19,7 +23,7 @@ namespace BashStartApi
                 .UseStartup<Startup>()
                 .Build();
 
-            host.Run();
+            host.Run(token);
         }
     }
 }
