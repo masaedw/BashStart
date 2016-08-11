@@ -1,35 +1,54 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web.Http;
 using System.Windows.Forms;
 
 namespace StartCore.Controllers
 {
+    public class StartOptions
+    {
+        [Required]
+        public string Name { get; set; }
+
+        public string Args { get; set; }
+
+        [Required]
+        public string CurrentDirectory { get; set; }
+    }
+
     public class StartController : ApiController
     {
+        public static string ToWindowsPath(string linuxPath) => // TODO: take care of outside of /mnt/c
+            Regex.Replace(linuxPath, "/mnt/(.)/", @"$1:\")
+                .Replace('/', '\\');
+
         [HttpPost]
-        public void Post([FromBody]string[] args)
+        public void Post([FromBody]StartOptions options)
         {
+            if (!ModelState.IsValid)
+            {
+                MessageBox.Show("Invalid arguments", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
-                switch (args.Length)
+                Environment.CurrentDirectory = ToWindowsPath(options.CurrentDirectory);
+                if (string.IsNullOrEmpty(options.Args))
                 {
-                    case 0:
-                        return;
-
-                    case 1:
-                        Process.Start(args[0]);
-                        return;
-
-                    default:
-                        Process.Start(args[0], string.Join(" ", args.Skip(1)));
-                        return;
+                    Process.Start(options.Name);
+                }
+                else
+                {
+                    Process.Start(options.Name, options.Args);
                 }
             }
             catch (Win32Exception e)
             {
-                MessageBox.Show(e.Message, args.FirstOrDefault() ?? "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, options.Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
