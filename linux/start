@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# TODO escape double quote
+name=$1
+args=$@
+args=("${args[@]:1}")
+wd=`pwd -P`
+api=http://localhost:5050/api/start
+
+curl -H 'Content-Type: application/json' -X POST -d "{\"Name\":\"${name}\",\"Args\":\"${args}\",\"CurrentDirectory\":\"${wd}\"}" ${api}
