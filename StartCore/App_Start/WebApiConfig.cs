@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace StartCore
 {
@@ -10,6 +7,7 @@ namespace StartCore
         public static void Register(HttpConfiguration config)
         {
             // Web API の設定およびサービス
+            config.EnableSystemDiagnosticsTracing();
 
             // Web API ルート
             config.MapHttpAttributeRoutes();
