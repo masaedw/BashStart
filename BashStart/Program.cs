@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
+using Microsoft.Owin.Hosting;
 
 namespace BashStart
 {
     internal static class Program
     {
+        private static IDisposable App;
+
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
@@ -13,7 +15,6 @@ namespace BashStart
         private static void Main()
         {
             Start();
-            return;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
@@ -21,7 +22,9 @@ namespace BashStart
 
         private static void Start()
         {
-            Process.Start("notepad", ".");
+            var baseAddress = "http://localhost:5050/";
+
+            App = WebApp.Start<Startup>(url: baseAddress);
         }
     }
 }
