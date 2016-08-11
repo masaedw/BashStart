@@ -15,9 +15,31 @@ namespace BashStart
         private static void Main()
         {
             Start();
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var menuItem = new MenuItem
+            {
+                Index = 0,
+                Text = "E&xit",
+            };
+
+            menuItem.Click += (o, e) => Application.Exit();
+
+            var contextMenu = new ContextMenu(new[] { menuItem });
+
+            var home = Environment.GetEnvironmentVariable("USERPROFILE");
+            Environment.CurrentDirectory = home;
+
+            var icon = new NotifyIcon
+            {
+                Icon = new System.Drawing.Icon($@"{home}\AppData\Local\lxss\bash.ico"),
+                ContextMenu = contextMenu,
+                Text = "StartServer",
+                Visible = true,
+            };
+
+            Application.ApplicationExit += (o, e) => icon.Visible = false;
+
+            Application.Run();
         }
 
         private static void Start()
