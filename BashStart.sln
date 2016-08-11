@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BashStart", "BashStart\BashStart.csproj", "{0F809361-E11A-41EB-80C0-8CF0FE5508B0}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BashStartApi", "BashStartApi\BashStartApi.xproj", "{7F362795-BF34-471E-8A9F-09952FE60548}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartCore", "StartCore\StartCore.csproj", "{036B6737-C3E6-4BA5-A068-442BB7310105}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{0F809361-E11A-41EB-80C0-8CF0FE5508B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F809361-E11A-41EB-80C0-8CF0FE5508B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F809361-E11A-41EB-80C0-8CF0FE5508B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F362795-BF34-471E-8A9F-09952FE60548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F362795-BF34-471E-8A9F-09952FE60548}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F362795-BF34-471E-8A9F-09952FE60548}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F362795-BF34-471E-8A9F-09952FE60548}.Release|Any CPU.Build.0 = Release|Any CPU
 		{036B6737-C3E6-4BA5-A068-442BB7310105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{036B6737-C3E6-4BA5-A068-442BB7310105}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{036B6737-C3E6-4BA5-A068-442BB7310105}.Release|Any CPU.ActiveCfg = Release|Any CPU
