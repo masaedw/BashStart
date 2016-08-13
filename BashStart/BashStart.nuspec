@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BashStart</id>
+    <version>0.0.1</version>
+    <title>$title$</title>
+    <authors>Masayuki Muto</authors>
+    <owners>Masayuki Muto</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>https://github.com/masaedw/BashStart</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A start command on Bash on Windows.</description>
+    <releaseNotes>First test release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>BashOnWindows</tags>
+  </metadata>
+</package>
