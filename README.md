@@ -5,3 +5,7 @@ A start command on Bash on Ubuntu on Windows. This is an equivalent of cygstart 
 # Architecture
 
 This is a couple of executables. An api server as windows app in system tray and 'start' command.
+
+## License
+
+MIT
