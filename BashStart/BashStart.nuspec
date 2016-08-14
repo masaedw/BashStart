@@ -1,18 +1,21 @@
-<?xml version="1.0"?>
-<package >
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>bash-start</id>
-    <version>0.0.1</version>
-    <title>$title$</title>
-    <authors>Masayuki Muto</authors>
+    <version>0.0.1-beta</version>
+    <packageSourceUrl>https://github.com/masaedw/BashStart</packageSourceUrl>-->
     <owners>Masayuki Muto</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <title>bash-start (Install)</title>
+    <authors>Masayuki Muto</authors>
     <projectUrl>https://github.com/masaedw/BashStart</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/bash-start.png</iconUrl>-->
+    <licenseUrl>https://github.com/masaedw/BashStart/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
+      <tags>bash-start admin bash-on-windows</tags>
+    <summary>A start command on Bash on Windows.</summary>
     <description>A start command on Bash on Windows.</description>
-    <releaseNotes>First test release.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
-    <tags>BashOnWindows</tags>
   </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
 </package>
