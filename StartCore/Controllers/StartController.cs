@@ -37,13 +37,14 @@ namespace StartCore.Controllers
             try
             {
                 Environment.CurrentDirectory = ToWindowsPath(options.CurrentDirectory);
+                var name = ToWindowsPath(options.Name);
                 if (string.IsNullOrEmpty(options.Args))
                 {
-                    Process.Start(options.Name);
+                    Process.Start(name);
                 }
                 else
                 {
-                    Process.Start(options.Name, options.Args);
+                    Process.Start(name, options.Args);
                 }
             }
             catch (Win32Exception e)
